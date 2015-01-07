@@ -102,6 +102,21 @@ public class StockAgenteRestApi {
         return finalValue;
     }
 
+
+    public JSONObject GetComprobanteVentaDetalle_Env(int idEstablec) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "GetComprobanteVentaDetalle_Env");
+        p.put("idEstablec",mapObject(idEstablec));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
     public JSONObject GetComprobanteVentaEnv(int idEstablec) throws Exception {
         JSONObject result = null;
         JSONObject o = new JSONObject();
@@ -194,20 +209,6 @@ public class StockAgenteRestApi {
         JSONObject p = new JSONObject();
         o.put("interface","RestAPI");
         o.put("method", "GetStockAgente");
-        p.put("idAgenteVenta",mapObject(idAgenteVenta));
-        o.put("parameters", p);
-        String s = o.toString();
-        String r = load(s);
-        result = new JSONObject(r);
-        return result;
-    }
-
-    public JSONObject GetStock(int idAgenteVenta) throws Exception {
-        JSONObject result = null;
-        JSONObject o = new JSONObject();
-        JSONObject p = new JSONObject();
-        o.put("interface","RestAPI");
-        o.put("method", "GetStock");
         p.put("idAgenteVenta",mapObject(idAgenteVenta));
         o.put("parameters", p);
         String s = o.toString();

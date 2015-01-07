@@ -25,21 +25,21 @@ public class LiquidacionAgenteParser {
             {
                 jsonObj=jsonArray.getJSONObject(i);
                 arrayList.add(new LiquidacionAgente(
-                        jsonObj.getString("NombreAgente"),
-                        jsonObj.getString("SerieFactura"),
-                        jsonObj.getString("NomUsuario"),
-                        jsonObj.getInt("KmInicial"),
-                        jsonObj.getString("SerieBoleta"),
-                        jsonObj.getInt("IdAgente"),
-                        jsonObj.getInt("NroBodegas"),
-                        jsonObj.getInt("IdLiquidacion"),
-                        jsonObj.getString("PassUsuario"),
-                        jsonObj.getString("Ruta"),
-                        jsonObj.getString("CorrelativoBoleta"),
-                        jsonObj.getInt("KmFinal"),
-                        jsonObj.getInt("IdEmpresa"),
-                        jsonObj.getString("CorrelativoFactura"),
-                        jsonObj.getInt("IdUsuario")));
+                        jsonObj.getString("nombreAgente"),
+                        jsonObj.getString("serieFactura"),
+                        jsonObj.getString("nomUsuario"),
+                        jsonObj.getInt("kmInicial"),
+                        jsonObj.getString("serieBoleta"),
+                        jsonObj.getInt("idAgente"),
+                        jsonObj.getInt("nroBodegas"),
+                        jsonObj.getInt("idLiquidacion"),
+                        jsonObj.getString("passUsuario"),
+                        jsonObj.getString("ruta"),
+                        jsonObj.getString("correlativoBoleta"),
+                        jsonObj.getInt("kmFinal"),
+                        jsonObj.getInt("idEmpresa"),
+                        jsonObj.getString("correlativoFactura"),
+                        jsonObj.getInt("idUsuario")));
 
             }
 
