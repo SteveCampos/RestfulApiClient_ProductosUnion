@@ -23,8 +23,7 @@ import org.json.JSONArray;
  * Created by CCIE on 30/12/2014.
  */
 public class StockAgenteRestApi {
-
-    private final String urlString = "http://192.168.0.104:84/StockAgente.ashx";
+    private final String urlString = "http://192.168.0.121:84/StockAgente.ashx";
 
     private static String convertStreamToUTF8String(InputStream stream) throws IOException {
         String result = "";
@@ -103,6 +102,92 @@ public class StockAgenteRestApi {
         return finalValue;
     }
 
+    public JSONObject GetComprobanteVentaEnv(int idEstablec) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "GetComprobanteVentaEnv");
+        p.put("idEstablec",mapObject(idEstablec));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
+    public JSONObject GetEstablecimeintoXRuta(int idCajaLiqui,String fecha) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "GetEstablecimeintoXRuta");
+        p.put("idCajaLiqui",mapObject(idCajaLiqui));
+        p.put("fecha",mapObject(fecha));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
+    public JSONObject GetHistorialCobrosPendientes(int idEstablec) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "GetHistorialCobrosPendientes");
+        p.put("idEstablec",mapObject(idEstablec));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
+    public JSONObject GetHistorialVentas(int idEstablec) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "GetHistorialVentas");
+        p.put("idEstablec",mapObject(idEstablec));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
+    public JSONObject GetLiquidacionAgente(int idAgente) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "GetLiquidacionAgente");
+        p.put("idAgente",mapObject(idAgente));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
+    public JSONObject GetPrecioCategoria(int liquidacionCajaId,int StkagIAgenteId) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "GetPrecioCategoria");
+        p.put("liquidacionCajaId",mapObject(liquidacionCajaId));
+        p.put("StkagIAgenteId",mapObject(StkagIAgenteId));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
     public JSONObject GetStockAgente(int idAgenteVenta) throws Exception {
         JSONObject result = null;
         JSONObject o = new JSONObject();
@@ -130,4 +215,5 @@ public class StockAgenteRestApi {
         result = new JSONObject(r);
         return result;
     }
+
 }

@@ -54,7 +54,9 @@ public class stockAgenteListar extends Activity {
                 int idAgente = Integer.parseInt(params[0]);
                 //JSONObject jsonObj = api.GetStockAgente(2);
                 JSONObject jsonObj = api.GetStock(2);
+                JSONObject jsonObjA = api.GetStockAgente(2);
                 Log.d("JSON OBJECT", ""+jsonObj.toString());
+                Log.d("JSON OBJECT AGENTE", ""+jsonObjA.toString());
                 StockAgenteParser parser = new StockAgenteParser();
                 //stockAgenteTable = parser.parserStockAgente(jsonObj);
                 stockAgenteTable = parser.parserStock(jsonObj);

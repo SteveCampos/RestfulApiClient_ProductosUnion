@@ -55,7 +55,7 @@ public class StockAgenteParser {
             for(int i=0;i<jsonArray.length();i++)
             {
                 jsonObj=jsonArray.getJSONObject(i);
-                arrayList.add(new Stock(jsonObj.getInt("StkagIStock")));
+                arrayList.add(new Stock(jsonObj.getInt("stock")));
             }
 
         } catch (JSONException e) {

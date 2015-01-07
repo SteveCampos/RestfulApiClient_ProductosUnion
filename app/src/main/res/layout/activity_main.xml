@@ -10,23 +10,16 @@
     android:orientation="vertical">
 
     <TextView
-        android:text="Introduzca ID"
+        android:text="Consumir API RESTFUL de SQLSERVER"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="24dp" />
 
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="48dp"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText" />
-
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Ir"
-        android:id="@+id/button" />
+        android:text="AsyncTask"
+        android:id="@+id/buttonAsynTask" />
 
 </LinearLayout>

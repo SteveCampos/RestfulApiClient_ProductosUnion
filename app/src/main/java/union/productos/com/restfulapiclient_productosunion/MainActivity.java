@@ -1,8 +1,11 @@
 package union.productos.com.restfulapiclient_productosunion;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,33 +13,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import union.productos.com.restfulapiclient_productosunion.AsyncTask.AsyncTaskMain;
+
 
 public class MainActivity extends Activity {
 
-    private Button button;
-    private EditText editText;
+    private Button buttonAsyncTask;
     private Context mContext;
+    private AsyncTaskMain asyncTaskMain;
+    public ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mContext = this;
-        button = (Button)findViewById(R.id.button);
-        editText = (EditText) findViewById(R.id.editText);
-        button.setOnClickListener(new View.OnClickListener() {
+        buttonAsyncTask = (Button) findViewById(R.id.buttonAsynTask);
+        buttonAsyncTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()){
-                    case R.id.button:
-
-                        Intent intent = new Intent(mContext, stockAgenteListar.class);
-                        intent.putExtra("idAgente",editText.getText().toString());
-                        startActivity(intent);
-                        break;
-                }
+            asyncTaskMain = new AsyncTaskMain(mContext);
+            asyncTaskMain.execute();
             }
         });
+
     }
 
 
