@@ -11,12 +11,14 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import union.productos.com.restfulapiclient_productosunion.JSONParser.ComprobanteVentaEnvParser;
 import union.productos.com.restfulapiclient_productosunion.JSONParser.EstablecimientoXRutaParser;
 import union.productos.com.restfulapiclient_productosunion.JSONParser.HistorialCobroPendienteParser;
 import union.productos.com.restfulapiclient_productosunion.JSONParser.HistorialVentaParser;
 import union.productos.com.restfulapiclient_productosunion.JSONParser.LiquidacionAgenteParser;
 import union.productos.com.restfulapiclient_productosunion.JSONParser.PrecioCategoriaParser;
 import union.productos.com.restfulapiclient_productosunion.JSONParser.StockAgenteParser;
+import union.productos.com.restfulapiclient_productosunion.Objects.ComprobanteVentaEnv;
 import union.productos.com.restfulapiclient_productosunion.Objects.EstablecimientoXRuta;
 import union.productos.com.restfulapiclient_productosunion.Objects.HistorialCobroPendiente;
 import union.productos.com.restfulapiclient_productosunion.Objects.HistorialVenta;
@@ -30,6 +32,8 @@ import union.productos.com.restfulapiclient_productosunion.RestApi.StockAgenteRe
  */
 public class AsyncTaskMain extends AsyncTask<String, String, String> {
 
+
+    //Comentario
     private Context mContext;
     ProgressDialog prgDialog;
 
@@ -54,6 +58,7 @@ public class AsyncTaskMain extends AsyncTask<String, String, String> {
         ArrayList<HistorialVenta> historialVentas = null;
         ArrayList<HistorialCobroPendiente> historialCobroPendientes = null;
         ArrayList<EstablecimientoXRuta> establecimientoXRutas = null;
+        ArrayList<ComprobanteVentaEnv> comprobanteVentaEnvs = null;
         try {
 
             //int idAgente = Integer.parseInt(strings[0]);
@@ -84,6 +89,7 @@ public class AsyncTaskMain extends AsyncTask<String, String, String> {
             HistorialVentaParser historialVentaParser = new HistorialVentaParser();
             HistorialCobroPendienteParser historialCobroPendienteParser = new HistorialCobroPendienteParser();
             EstablecimientoXRutaParser establecimientoXRutaParser = new EstablecimientoXRutaParser();
+            ComprobanteVentaEnvParser comprobanteVentaEnvParser = new ComprobanteVentaEnvParser();
 
             stockAgenteLista = stockAgenteParser.parserStockAgente(jsonObjStockAgente);
             precioCategoriaLista = precioCategoriaParser.parserPrecioCategoria(jsonObjPrecioCategoria);
@@ -91,6 +97,7 @@ public class AsyncTaskMain extends AsyncTask<String, String, String> {
             historialVentas = historialVentaParser.parserHistorialVenta(jsonObjHistorialVenta);
             historialCobroPendientes = historialCobroPendienteParser.parserHistorialCobroPendiente(jsonObjHistorialCobroPendiente);
             establecimientoXRutas = establecimientoXRutaParser.parserEstablecimientoXRuta(jsonObjEstablecXRuta);
+            comprobanteVentaEnvs = comprobanteVentaEnvParser.parserComprobanteVentaEnv(jsonObjComprobanteVentaEnv);
 
 
 
@@ -128,13 +135,17 @@ public class AsyncTaskMain extends AsyncTask<String, String, String> {
             for (int i = 0; i < establecimientoXRutas.size() ; i++) {
                 Log.d("ESTABLECIMIENTOS X RUTAS: " + i, " Nombre Establecimiento : " + establecimientoXRutas.get(i).getNomEstablec());
             }
+            for (int i = 0; i < comprobanteVentaEnvs.size() ; i++) {
+                Log.d("COMPROBANTE VENTA ENV: " + i, " Total : " + comprobanteVentaEnvs.get(i).getTotal());
+            }
+
 
 
 
 
             publishProgress("" + 100);
 
-            Log.d("PARSER AGENTE STOCK ", "FINALIZADO");
+            Log.d("PARSER", "FINALIZADO");
 
 
         } catch (Exception e) {
