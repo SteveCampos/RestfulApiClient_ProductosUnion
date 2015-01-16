@@ -5,13 +5,13 @@ package union.productos.com.restfulapiclient_productosunion.Objects;
  */
 public class PrecioCategoria {
 
+    private int idProducto;
+    private int idCategoriaEstablec;
+    private Double costoVenta;
+    private Double valorUnidad;
     private int desde;
     private int hasta;
-    private int idCategoriaEstablec;
-    private int idProducto;
-    private Double costoVenta;
     private Double escalaPrecios;
-    private Double valorUnidad;
     private String descripcion;
 
 

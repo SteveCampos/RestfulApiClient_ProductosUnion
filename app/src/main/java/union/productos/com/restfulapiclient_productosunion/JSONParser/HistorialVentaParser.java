@@ -26,7 +26,7 @@ public class HistorialVentaParser {
                 jsonObj=jsonArray.getJSONObject(i);
                 arrayList.add(new HistorialVenta(
                         jsonObj.getInt("idComprobanteVenta"),
-                        jsonObj.getString("Comprobante"),
+                        jsonObj.getString("comprobante"),
                         jsonObj.getInt("numeroDocumento"),
                         jsonObj.getInt("idProducto"),
                         jsonObj.getInt("idEstablec"),

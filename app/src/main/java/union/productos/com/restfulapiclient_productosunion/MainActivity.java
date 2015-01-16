@@ -14,13 +14,16 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import union.productos.com.restfulapiclient_productosunion.AsyncTask.AsyncTaskMain;
+import union.productos.com.restfulapiclient_productosunion.AsyncTask.ExportMain;
 
 
 public class MainActivity extends Activity {
 
     private Button buttonAsyncTask;
-    private Context mContext;
+    private Button buttonExportar;
+    private MainActivity mContext;
     private AsyncTaskMain asyncTaskMain;
+    private ExportMain asyncExport;
     public ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +31,19 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         mContext = this;
         buttonAsyncTask = (Button) findViewById(R.id.buttonAsynTask);
+        buttonExportar = (Button) findViewById(R.id.buttonExportAsynTask);
         buttonAsyncTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
             asyncTaskMain = new AsyncTaskMain(mContext);
             asyncTaskMain.execute();
+            }
+        });
+        buttonExportar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                asyncExport = new ExportMain(mContext);
+                asyncExport.execute();
             }
         });
 

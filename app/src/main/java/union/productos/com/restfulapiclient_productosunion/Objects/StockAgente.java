@@ -5,7 +5,6 @@ package union.productos.com.restfulapiclient_productosunion.Objects;
  */
 public class StockAgente {
 
-    private int idStockAgente;
     private int idProducto;
     private String nombre;
     private int proVCodigo;
@@ -15,9 +14,8 @@ public class StockAgente {
     private int stockDisponible;
     private int idAgente;
 
-    public StockAgente(int idStockAgente, int idProducto, String nombre, int proVCodigo, int codigoBarras, int stockInicial, int stockFinal, int stockDisponible, int idAgente) {
+    public StockAgente(int idProducto, String nombre, int proVCodigo, int codigoBarras, int stockInicial, int stockFinal, int stockDisponible, int idAgente) {
         super();
-        this.idStockAgente = idStockAgente;
         this.idProducto = idProducto;
         this.nombre = nombre;
         this.proVCodigo = proVCodigo;
@@ -30,7 +28,6 @@ public class StockAgente {
 
     public StockAgente() {
         super();
-        this.idStockAgente = 0;
         this.idProducto = 0;
         this.nombre = null;
         this.proVCodigo = 0;
@@ -39,14 +36,6 @@ public class StockAgente {
         this.stockFinal = 0;
         this.stockDisponible = 0;
         this.idAgente = 0;
-    }
-
-    public int getIdStockAgente() {
-        return idStockAgente;
-    }
-
-    public void setIdStockAgente(int idStockAgente) {
-        this.idStockAgente = idStockAgente;
     }
 
     public int getIdProducto() {

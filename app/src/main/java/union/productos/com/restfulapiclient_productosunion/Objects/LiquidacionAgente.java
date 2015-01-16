@@ -5,21 +5,24 @@ package union.productos.com.restfulapiclient_productosunion.Objects;
  */
 public class LiquidacionAgente {
 
-    private String nombreAgente;
-    private String serieFactura;
-    private String nomUsuario;
-    private int kmInicial;
-    private String serieBoleta;
     private  int idAgente;
-    private int nroBodegas;
-    private int idLiquidacion;
-    private String passUsuario;
-    private String ruta;
-    private String correlativoBoleta;
-    private int kmFinal;
     private int idEmpresa;
-    private String correlativoFactura;
     private int idUsuario;
+    private String nombreAgente;
+    private String nomUsuario;
+    private String passUsuario;
+    private int idLiquidacion;
+    private int kmInicial;
+    private int kmFinal;
+    private String ruta;
+    private int nroBodegas;
+    private String serieBoleta;
+    private String serieFactura;
+    private String correlativoBoleta;
+    private String correlativoFactura;
+
+
+
 
     public LiquidacionAgente(String nombreAgente, String serieFactura, String nomUsuario, int kmInicial, String serieBoleta, int idAgente, int nroBodegas, int idLiquidacion, String passUsuario, String ruta, String correlativoBoleta, int kmFinal, int idEmpresa, String correlativoFactura, int idUsuario) {
 

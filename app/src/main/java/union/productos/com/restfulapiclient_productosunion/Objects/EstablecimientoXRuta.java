@@ -18,6 +18,8 @@ public class EstablecimientoXRuta {
     private int surtiddoStockAnterior;
     private int diasCredito;
     private int idAgente;
+
+    //OBTIENE DE MÁS ESTOS CAMPOS
     private int idCajaLiquidacion;
     private String fecha;
 

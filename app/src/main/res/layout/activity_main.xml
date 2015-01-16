@@ -19,7 +19,18 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="AsyncTask"
+        android:text="IMPORT - AsyncTask"
         android:id="@+id/buttonAsynTask" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="EXPORT - AsyncTask"
+        android:id="@+id/buttonExportAsynTask" />
+
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView" />
 
 </LinearLayout>

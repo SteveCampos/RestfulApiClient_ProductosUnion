@@ -102,6 +102,25 @@ public class StockAgenteRestApi {
         return finalValue;
     }
 
+    public JSONObject CreatePlanPagoExp(int p_PlpBIComprobanteVentaId,String p_PlpDTFechaPago,double p_PlpDOPorcentajeInteresMes,int p_PlpIUsuarioId,int p_FormaPago,int p_tipoVenta) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "CreatePlanPagoExp");
+        p.put("p_PlpBIComprobanteVentaId",mapObject(p_PlpBIComprobanteVentaId));
+        p.put("p_PlpDTFechaPago",mapObject(p_PlpDTFechaPago));
+        p.put("p_PlpDOPorcentajeInteresMes",mapObject(p_PlpDOPorcentajeInteresMes));
+        p.put("p_PlpIUsuarioId",mapObject(p_PlpIUsuarioId));
+        p.put("p_FormaPago",mapObject(p_FormaPago));
+        p.put("p_tipoVenta",mapObject(p_tipoVenta));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
 
     public JSONObject GetComprobanteVentaDetalle_Env(int idEstablec) throws Exception {
         JSONObject result = null;

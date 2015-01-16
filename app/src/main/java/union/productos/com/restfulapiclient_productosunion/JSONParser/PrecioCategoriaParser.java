@@ -26,12 +26,12 @@ public class PrecioCategoriaParser {
                 jsonObj=jsonArray.getJSONObject(i);
                 arrayList.add(new PrecioCategoria(jsonObj.getInt("desde"),
                         jsonObj.getInt("hasta"),
-                        jsonObj.getInt("idCategoriaEstablec"),
+                        jsonObj.getInt("idCateEstablec"),
                         jsonObj.getInt("idProducto"),
                         jsonObj.getDouble("costoVenta"),
                         jsonObj.getDouble("escalaPrecios"),
                         jsonObj.getDouble("valorUnidad"),
-                        jsonObj.getString("descripcion")));
+                        jsonObj.getString("nombreProducto")));
             }
 
         } catch (JSONException e) {

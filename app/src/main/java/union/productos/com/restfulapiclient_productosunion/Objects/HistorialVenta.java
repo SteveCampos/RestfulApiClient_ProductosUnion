@@ -6,10 +6,10 @@ package union.productos.com.restfulapiclient_productosunion.Objects;
 public class HistorialVenta {
 
     private int idComprobanteVenta;
-    private String comprobante;
-    private int numeroDocumento;
-    private int idProducto;
     private int idEstablec;
+    private int numeroDocumento;
+    private String comprobante;
+    private int idProducto;
     private int idAgente;
     private String nombreProducto;
     private String descripcionEstablec;

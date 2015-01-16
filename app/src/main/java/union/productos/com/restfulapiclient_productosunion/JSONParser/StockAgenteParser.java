@@ -28,15 +28,15 @@ public class StockAgenteParser {
             for(int i=0;i<jsonArray.length();i++)
             {
                 jsonObj=jsonArray.getJSONObject(i);
-                arrayList.add(new StockAgente(jsonObj.getInt("StkagIStockAgenteId"),
-                        jsonObj.getInt("StkagIProductoId"),
-                        jsonObj.getString("ProVDescripcion"),
-                        jsonObj.getInt("ProVCodigo"),
+                arrayList.add(new StockAgente(
+                        jsonObj.getInt("idProducto"),
+                        jsonObj.getString("nombreProducto"),
+                        jsonObj.getInt("codigo"),
                         jsonObj.getInt("codigoBarras"),
-                        jsonObj.getInt("StkagIStockInicial"),
-                        jsonObj.getInt("StkagIStock"),
-                        jsonObj.getInt("StkagIDisponible"),
-                        jsonObj.getInt("StkagIAgenteId")));
+                        jsonObj.getInt("stockInicial"),
+                        jsonObj.getInt("stockFinal"),
+                        jsonObj.getInt("stockDisponible"),
+                        jsonObj.getInt("idAgente")));
             }
 
         } catch (JSONException e) {
